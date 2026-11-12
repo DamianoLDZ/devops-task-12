@@ -19,6 +19,13 @@ class TestDiskCheck(unittest.TestCase):
 
         mock_disk_usage.assert_called_once_with("/")
 
+    @patch("src.disk_check.shutil.disk_usage")
+    def test_invalid_path(self, mock_disk_usage):
+        mock_disk_usage.side_effect = OSError("Path not found")
+
+        with self.assertRaises(ValueError):
+            check_disk_usage("/invalid/path")
+
 
 if __name__ == "__main__":
     unittest.main()
