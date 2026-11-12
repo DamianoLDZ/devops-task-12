@@ -1,4 +1,4 @@
-# DevOps Task 12
+# DevOps ADDITIONALS Lesson
 
 Repository created as part of DevOps homework.
 
